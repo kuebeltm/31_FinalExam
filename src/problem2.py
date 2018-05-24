@@ -22,7 +22,7 @@ def main():
     print(' to run the testing code as you complete the TODOs.')
     run_test_problem2a()
     run_test_problem2b()
-    # run_test_problem2c()
+    run_test_problem2c()
 
 
 def is_prime(n):
@@ -438,11 +438,29 @@ def problem2c(x):
       :type x:    int
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    """""
+    Approach:
+        - Create a current_num = x
+        - Create an infinite loop. 
+        - Check using if, if is_prime(x)
+            - If True, check if is_prime(sum_of_digits(x)) is True
+                - break the loop
+            - Else: current_num ++ 1
+        - return current_num
+    """""
 
+    current_num = x
 
+    while True:
+        if is_prime(current_num):
+            if is_prime(sum_of_digits(current_num)):
+                break
+        current_num = current_num + 1
+
+    return current_num
 ###############################################################################
 # Our tests use the following to print error messages in red.
 # Do NOT change it.  You do NOT have to do anything with it.
