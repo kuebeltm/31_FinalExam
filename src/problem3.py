@@ -94,7 +94,7 @@ def problem3(point, circle1, circle2, window):
     """
     # ------------------------------------------------------------------
     # DONE: 2. Implement and test this function.
-    #          Tests have been written for you (above).
+    #          Tests have been written for you (above)
     # ------------------------------------------------------------------
 
     circle1_center = circle1.center
