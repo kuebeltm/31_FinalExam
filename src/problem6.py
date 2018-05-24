@@ -91,10 +91,19 @@ And this one for n=14:
     for row in range(1,n+1,1):
 
 
+        if n > 9:
+            for space in range(n - (row)):
+                print(' ', end='')
+            for num in range(row):
+                print(num + 1, end='')
+            for k in range(0, 9-(n-row))
+
         for space in range(n-(row)):
             print(' ', end='')
         for num in range(row):
             print(num+1, end='')
+
+
         for star in range(row+1):
             print('*', end='')
 
