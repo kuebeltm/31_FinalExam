@@ -20,7 +20,7 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
     run_test_problem1a()
-    # run_test_problem1b()
+    run_test_problem1b()
 
 
 def run_test_problem1a():
@@ -173,18 +173,19 @@ def problem1b(numbers):
       :type numbers:  [int]
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     """""
     Approach:
-    Traverse array using for loop. The loop will be bounded by len(numbers) // 3 and ((len(numbers) * 2)//3)-1
+    Traverse array using for loop. The loop will be bounded by len(numbers) // 3 
     """
 
     accum = 0
 
-    for k in range(len(numbers)//3, ((len(numbers)*2)/3)-1):
-        accum = numbers[k]
+    for k in range((len(numbers)//3), ((len(numbers)*2)//3)):
+        accum = numbers[k] + accum
+        print(k)
     return accum
 
 ###############################################################################
