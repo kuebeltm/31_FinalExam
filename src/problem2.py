@@ -8,6 +8,7 @@ Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
 
 import time
 import testing_helper
+import math
 
 
 def main():
@@ -20,7 +21,7 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
     run_test_problem2a()
-    # run_test_problem2b()
+    run_test_problem2b()
     # run_test_problem2c()
 
 
@@ -263,10 +264,41 @@ def problem2b(sequence):
       :type sequence  [int]
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    """""
+    Approach:
+        - Import math class
+        - Create a max_num var and set it equal to 0
+        - Create index var
+        -Traverse sequence list by using a for loop from 0 to len(sequence).
+        - Obtain math.abs(sequence[k]) and place in an if statement that compares it to max_num
+        - Check if its greater than the current max num
+            -If it is greater, set max_var = sequence[k] & index_var = k
+        - Return max_ var
+        
+        OR
+        
+        -Split down the middle, compare symmetrical sides
+        
+        OR
+        
+        -Check by twos, comparing each "set" of two. Cuts loop in half
+        
+    """""
 
+    max_num = 0
+    index_var = 0
+
+    for k in range(0, len(sequence), 1):
+        checking_var = math.fabs(sequence[k])
+        if checking_var > max_num:
+            print(checking_var)
+            max_num = checking_var
+            index_var = k
+
+    return index_var
 
 def run_test_problem2c():
     """ Tests the  problem2c   function. """
