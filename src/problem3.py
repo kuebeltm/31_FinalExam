@@ -2,9 +2,9 @@
 Final exam, problem 3.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  May 2018.
+         their colleagues and Todd Kuebelbeck.  May 2018.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import time
@@ -93,9 +93,42 @@ def problem3(point, circle1, circle2, window):
       :type window:    rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
+
+    circle1_center = circle1.center
+    circle2_center = circle2.center
+
+    point_to_c1 = rg.Line(point, circle1_center)
+    c1_to_c2 = rg.Line(circle1_center, circle2_center)
+    c2_to_point = rg.Line(circle2_center, point)
+
+    point_to_c1.color = circle1.fill_color
+    c1_to_c2.color = circle1.fill_color
+    c2_to_point.color = circle1.fill_color
+
+    mid_1 = rg.Line(point_to_c1.get_midpoint(), c1_to_c2.get_midpoint())
+    mid_2 = rg.Line(c1_to_c2.get_midpoint(), c2_to_point.get_midpoint())
+    mid_3 = rg.Line(c2_to_point.get_midpoint(), point_to_c1.get_midpoint())
+
+    mid_1.color = circle2.fill_color
+    mid_2.color = circle2.fill_color
+    mid_3.color = circle2.fill_color
+
+    point.attach_to(window)
+    circle1.attach_to(window)
+    circle2.attach_to(window)
+    point_to_c1.attach_to(window)
+    c1_to_c2.attach_to(window)
+    c2_to_point.attach_to(window)
+    mid_1.attach_to(window)
+    mid_2.attach_to(window)
+    mid_3.attach_to(window)
+
+    window.render()
+
+    window.continue_on_mouse_click()
 
 
 # -----------------------------------------------------------------------------
