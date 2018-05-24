@@ -151,7 +151,7 @@ def problem5(m, numbers1, numbers2):
                 values.append(numbers1[index_of_zero])
                 values.append(numbers2[index_of_zero])
                 # values.append(numbers1[k])
-                # values.append(numbers2[k])
+                # values.append(numbers2[k]
                 break
             else:
                 break
