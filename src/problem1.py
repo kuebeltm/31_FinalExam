@@ -97,6 +97,7 @@ def problem1a(numbers):
     """"
     Approach:    
     create an accumulator variable, that the function will sum numbers[0] + numbers[len(numbers)-1] + numbers[len(numbers)//2]
+    
     """
     sum = numbers[0] + numbers[len(numbers)-1] + numbers[len(numbers)//2]
     return sum
