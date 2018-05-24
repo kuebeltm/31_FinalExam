@@ -96,12 +96,14 @@ And this one for n=14:
                 print(' ', end='')
             for num in range(row):
                 print(num + 1, end='')
-            for k in range(0, 9-(n-row))
+            for r in range((row-9)+1):
+                print(r, end='')
 
-        for space in range(n-(row)):
-            print(' ', end='')
-        for num in range(row):
-            print(num+1, end='')
+        else:
+            for space in range(n-(row)):
+                print(' ', end='')
+            for num in range(row):
+                print(num+1, end='')
 
 
         for star in range(row+1):
