@@ -2,9 +2,9 @@
 Final exam, problem 5.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  May 2018.
+         their colleagues and Todd Kuebelbeck.  May 2018.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
@@ -139,7 +139,27 @@ def problem5(m, numbers1, numbers2):
     # TODO: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    values = list()
 
+    if len(numbers1) is not len(numbers2):
+        return -1
+
+    for k in range(len(numbers1)):
+        if m is 0:
+            if numbers2[k] is 0 and m is 0:
+                index_of_zero = numbers2.index(0,0, len(numbers2))
+                values.append(numbers1[index_of_zero])
+                values.append(numbers2[index_of_zero])
+                # values.append(numbers1[k])
+                # values.append(numbers2[k])
+                break
+            else:
+                break
+        if (numbers2[k] // m) is numbers1[k]:
+            values.append(numbers1[k])
+            values.append(numbers2[k])
+            break
+    return values
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
